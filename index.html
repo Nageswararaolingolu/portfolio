@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lingolu Nageswararao | Data Analyst & AI Enthusiast</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-main: #0a0f1d;
+      --bg-card: #111827;
+      --bg-card-hover: #1f293d;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: #1e293b;
+      --tag-bg: rgba(56, 189, 248, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1.25rem 8%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent) !important;
+      font-weight: 600;
+    }
+
+    /* Layout Containers */
+    section {
+      padding: 6rem 8% 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: var(--accent);
+      bottom: -6px;
+      left: 0;
+      border-radius: 2px;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: var(--tag-bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-email-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      width: fit-content;
+      padding: 0.4rem 0.9rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .hero-email-badge:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0a0f1d;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1.75rem;
+      border-radius: 12px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: #1e293b;
+      color: #cbd5e1;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+
+    /* Experience & Projects */
+    .timeline-card, .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .timeline-card:hover, .project-card:hover {
+      border-color: var(--accent);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .card-header h3 {
+      font-size: 1.3rem;
+    }
+
+    .card-header .date {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .company {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .bullet-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    /* Education & Certifications */
+    .edu-cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Contact Section Box */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    .contact-email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1.75rem;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-email-btn:hover {
+      background: var(--accent);
+      color: #0a0f1d;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 3rem 8%;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-links a {
+      color: var(--text-main);
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      nav { padding: 1rem 5%; justify-content: center; }
+      section { padding: 5rem 5% 3rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:Nageswararaolingoluu@gmail.com" class="nav-mail"><i class="fas fa-envelope"></i> Nageswararaolingoluu@gmail.com</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="badge"><i class="fas fa-chart-line"></i> Open for Data Analyst Roles</div>
+    <h1>Hi, I'm <span>Lingolu Nageswararao</span></h1>
+    <p>
+      Data Analyst specializing in SQL, Python, ETL automation, and dynamic Power BI reporting. 
+      Bridging the gap between raw data pipelines and predictive, high-impact business intelligence.
+    </p>
+    
+    <!-- Direct Email Display -->
+    <a href="mailto:Nageswararaolingoluu@gmail.com" class="hero-email-badge">
+      <i class="fas fa-envelope" style="color: var(--accent);"></i> Nageswararaolingoluu@gmail.com
+    </a>
+
+    <div class="btn-group">
+      <a href="mailto:Nageswararaolingoluu@gmail.com" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Email </a>
+      <a href="https://github.com/Nageswararaolingolu" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/nageswara-lingolu" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="skills-grid">
+      
+      <div class="skill-card">
+        <i class="fas fa-database"></i>
+        <h3>Databases & SQL</h3>
+        <div class="skill-tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">ETL Pipelines</span>
+          <span class="tag">Query Optimization</span>
+          <span class="tag">Data Cleaning</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-code"></i>
+        <h3>Programming & Analytics</h3>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Seaborn</span>
+          <span class="tag">EDA & Statistics</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-chart-pie"></i>
+        <h3>BI & Visualization</h3>
+        <div class="skill-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Advanced Excel</span>
+          <span class="tag">KPI Dashboards</span>
+          <span class="tag">Pivot Tables</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <i class="fas fa-brain"></i>
+        <h3>GenAI & Machine Learning</h3>
+        <div class="skill-tags">
+          <span class="tag">Scikit-Learn</span>
+          <span class="tag">RAG Architecture</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">Feature Engineering</span>
+          <span class="tag">Antigravity</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline-card">
+      <div class="card-header">
+        <div>
+          <h3>Data Analyst Intern</h3>
+          <div class="company"><i class="fas fa-building"></i> Vangrove Tech Pvt Ltd • Hyderabad, India</div>
+        </div>
+        <div class="date">June 2026 – September 2026</div>
+      </div>
+      <ul class="bullet-list">
+        <li>Engineered an end-to-end <strong>Predictive Maintenance Dashboard</strong> using Python, SQL, and Power BI to analyze industrial sensor streams and compute Remaining Useful Life (RUL) metrics.</li>
+        <li>Automated backend ETL pipelines and file-processing workflows in Python, eliminating manual overhead and enhancing operational efficiency.</li>
+        <li>Constructed validation scripts across active data pipelines, reducing runtime data anomalies and system errors.</li>
+        <li>Executed Exploratory Data Analysis (EDA) and data cleaning on high-dimensional sensor datasets to detect degradation trends prior to failure.</li>
+        <li>Designed dynamic visual reporting interfaces and KPI tracking metrics in Power BI to support proactive maintenance scheduling.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div>
+          <div class="card-header">
+            <h3>Hostel/PG Analytics System</h3>
+          </div>
+          <div class="company"><i class="fas fa-layer-group"></i> Python, PostgreSQL</div>
+          <ul class="bullet-list">
+            <li>Designed a normalized relational database schema in PostgreSQL to manage tenant allocations, room availability, and automated billing.</li>
+            <li>Authored optimized SQL queries and custom reporting scripts to improve query execution speed and database reporting performance.</li>
+          </ul>
+        </div>
+        <div class="skill-tags" style="margin-top: 1.5rem;">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Database Design</span>
+          <span class="tag">SQL Optimization</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="card-header">
+            <h3>AI-Based Student Performance Prediction</h3>
+          </div>
+          <div class="company"><i class="fas fa-layer-group"></i> Python, Scikit-Learn, Seaborn</div>
+          <ul class="bullet-list">
+            <li>Built a predictive analytics pipeline in Scikit-Learn, improving model performance through targeted feature engineering and data preprocessing.</li>
+            <li>Designed visual distribution plots and correlation heatmaps with Matplotlib and Seaborn to effectively communicate key performance factors.</li>
+          </ul>
+        </div>
+        <div class="skill-tags" style="margin-top: 1.5rem;">
+          <span class="tag">Python</span>
+          <span class="tag">Scikit-Learn</span>
+          <span class="tag">Predictive Modeling</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section id="education">
+    <h2 class="section-title">Education & Certifications</h2>
+    <div class="edu-cert-grid">
+      
+      <div class="timeline-card">
+        <h3>B.Tech in Artificial Intelligence & Data Science</h3>
+        <div class="company">BVC Engineering College, JNTUK • Andhra Pradesh, India</div>
+        <div class="date" style="margin-bottom: 0.5rem;">Graduation: 2026</div>
+        <p style="color: #cbd5e1; font-size: 0.95rem;"><strong>CGPA:</strong> 7.03 / 10</p>
+      </div>
+
+      <div class="timeline-card">
+        <h3>Certifications</h3>
+        <ul class="bullet-list" style="margin-top: 0.5rem;">
+          <li><strong>Data Analytics Certification</strong> — Andhra Pradesh State Council of Higher Education (APSCHE)</li>
+          <li><strong>Data Analytics Internship Completion Certification</strong> — CodSoft</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Get In Touch Section -->
+  <section id="contact" style="padding-bottom: 2rem;">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-card">
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Let's Connect & Collaborate</h3>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+        I'm actively looking for Data Analyst opportunities. Feel free to reach out directly via email.
+      </p>
+      <div>
+        <a href="mailto:Nageswararaolingoluu@gmail.com" class="contact-email-btn">
+          <i class="fas fa-envelope"></i> Nageswararaolingoluu@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="mailto:Nageswararaolingoluu@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/nageswara-lingolu" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Nageswararaolingolu" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="tel:+918522928586" title="Phone"><i class="fas fa-phone"></i></a>
+    </div>
+    <p>Designed for performance & impact • Lingolu Nageswararao</p>
+  </footer>
+
+</body>
+</html>
